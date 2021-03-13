@@ -58,7 +58,6 @@ while $loop; do
   case $ability in
     (q|quit|e|exit) loop=false ; continue ;;
   esac
-  ${a[(I)$c]}
   (( ${abilities[(I)$ability]} )) || continue
   cost=$(level_cost ${(P)ability})
   print "That will cost you $cost points."
