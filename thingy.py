@@ -32,12 +32,12 @@ def tired():
     footer='''
     </body></html>
     '''.strip()
-    body="<h1> STUFFY STUFF </h1><p>i am a {{ banana | default(pizza) }}</p>"
+    body="<h1>STUFFY STUFF</h1><p>i am a {{ banana | default(pizza) }}</p>"
     current_abilities='''
-    {% for key,value in abilities.items() %}{{ value[1] }}={{ value[0] }}</br>{% endfor %}
-    '''
+    {% for key,value in abilities.items() %}{{ value[1] }}({{ key }})={{ value[0] }}</br>{% endfor %}
+    '''.strip()
 
     banana="apache attack helicopter"
-    page=render_template_string(header+ body + current_abilities + footer, title="Spa Treatment", abilities=abilities)
+    page=render_template_string(header+ body + current_abilities + footer, title="Spa Treatment", abilities=abilities, pizza="banana")
     return page
 
