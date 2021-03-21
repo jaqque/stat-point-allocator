@@ -26,19 +26,6 @@ def tired():
         "active": ["","Active"],
     }
 
-    header='''
-    <html><head><title>{{ title }}</title></head><body>
-    '''.strip()
-    footer='''
-    </body></html>
-    '''.strip()
-    body="<h1>STUFFY STUFF</h1><p>i am a {{ banana | default(pizza) }}</p>"
-    current_abilities='''
-    {% for key,value in abilities.items() %}{{ value[1] }}({{ key }})={{ value[0] }}</br>{% endfor %}
-    '''.strip()
-
-    banana="apache attack helicopter"
-    page=render_template_string(header+ body + current_abilities + footer, title="Spa Treatment", abilities=abilities, pizza="banana")
     page=render_template("stat-template.html.j2",title="GET TO THE SPA-TER!!!", abilities=abilities, skills=skills)
     return page
 
