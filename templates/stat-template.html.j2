@@ -17,12 +17,11 @@
 <h2 style="text-align: center;">Level: {{ level }}</h2>
 </td>
 <td style="width: 219px;">
-<h2 style="text-align: center;"><span style="color: #ff0000;"><strong><input type="submit" value="Level Up!"></strong></span></h2>
+<h2 style="text-align: center;"><span style="color: #ff0000;"><strong><button type="submit" name="submit" value="levelup">Level Up!</button></strong></span></h2>
 </td>
 </tr>
 </tbody>
 </table>
-</form>
 
 <h2 style="text-align: left;">Points Remaining: 0</h2>
 
@@ -34,8 +33,8 @@
 {% if loop.index%2 %}<tr>{% endif %}
 <td><h3>{{ value[1] }}({{ key }})</h3></td>
 <td><h3>{{ value[0] }}</h3></td>
-<td><h2>-</h2></td>
-<td><h2>+</h2></td>
+<td><h2><button type="submit" name="submit" value="{{ key }}down">-</button></h2></td>
+<td><h2><button type="submit" name="submit" value="{{ key }}up">+</button></h2></td>
 {% if loop.index0%2 %}</tr>{% endif %}
 {% endfor %}
 
@@ -49,5 +48,6 @@
 <p>{{ value[0] }}</p>
 {% endfor %}
 
+</form>
 </body>
 </html>

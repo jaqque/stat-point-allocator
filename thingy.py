@@ -3,6 +3,7 @@ from flask import render_template_string, render_template, request
 
 app = Flask(__name__)
 
+## GLOBALS!! we like globals.
 
 name="William Frederickson, Esq."
 level=0
@@ -31,10 +32,16 @@ def tired():
     global level
 
     if request.method == 'POST':
-        level+=1
+        if request.form['submit']=='levelup':
+            level+=1
+        for ability in abilities:
+            if request.form['submit']==f"{ability}up":
+              abilities[ability][0]+=1
+            if request.form['submit']==f"{ability}down":
+              abilities[ability][0]-=1
 
     page=render_template("stat-template.html.j2",title="GET TO THE SPA-TER!!!", abilities=abilities, skills=skills, uri=request.base_url, level=level, name=name)
     return page
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)
