@@ -6,21 +6,24 @@
 <body>
 <!-- will no one thing of the indention ?!! -->
 <h1 style="text-align: center;">Stat Points Allocator</h1>
+<form action="{{ uri }}" method="POST">
 <table style="width: 611px;" border="1">
 <tbody>
 <tr>
 <td style="width: 237px;">
-<h2 style="text-align: center;">Name: Fred</h2>
+<h2 style="text-align: center;">Name: {{ name }}</h2>
 </td>
 <td style="width: 133px;">
-<h2 style="text-align: center;">Level: 2</h2>
+<h2 style="text-align: center;">Level: {{ level }}</h2>
 </td>
 <td style="width: 219px;">
-	<h2 style="text-align: center;"><span style="color: #ff0000;"><strong><input type="button" onclick="LevelUp()" value="Level Up!"></strong></span></h2>
+<h2 style="text-align: center;"><span style="color: #ff0000;"><strong><input type="submit" value="Level Up!"></strong></span></h2>
 </td>
 </tr>
 </tbody>
 </table>
+</form>
+
 <h2 style="text-align: left;">Points Remaining: 0</h2>
 
 <!-- table -->
