@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 <title>{{ title }}</title>
+<script type="text/javascript" src="{{ url_for('static', filename='spa.js') }}"></script>
 </head>
 <body>
 <!-- will no one thing of the indention ?!! -->
@@ -15,7 +16,7 @@
 <h2 style="text-align: center;">Level: 2</h2>
 </td>
 <td style="width: 219px;">
-<h2 style="text-align: center;"><span style="color: #ff0000;"><strong>Level Up!</strong></span></h2>
+	<h2 style="text-align: center;"><span style="color: #ff0000;"><strong><input type="button" onclick="LevelUp()" value="Level Up!"></strong></span></h2>
 </td>
 </tr>
 </tbody>
