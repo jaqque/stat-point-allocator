@@ -22,8 +22,8 @@ def tired():
     }
     bonus_points=0
     skills = {
-        "active": ["","Active Skills"],
-        "passive": ["","Passive Skills"],
+        "passive": ["","Passive"],
+        "active": ["","Active"],
     }
 
     header='''
@@ -39,6 +39,6 @@ def tired():
 
     banana="apache attack helicopter"
     page=render_template_string(header+ body + current_abilities + footer, title="Spa Treatment", abilities=abilities, pizza="banana")
-    page=render_template("stat-template.html.j2")
+    page=render_template("stat-template.html.j2",title="GET TO THE SPA-TER!!!", abilities=abilities, skills=skills)
     return page
 
