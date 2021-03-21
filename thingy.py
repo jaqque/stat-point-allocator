@@ -42,3 +42,5 @@ def tired():
     page=render_template("stat-template.html.j2",title="GET TO THE SPA-TER!!!", abilities=abilities, skills=skills)
     return page
 
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
