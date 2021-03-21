@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template_string
+from flask import render_template_string, render_template
 
 app = Flask(__name__)
 
@@ -39,5 +39,6 @@ def tired():
 
     banana="apache attack helicopter"
     page=render_template_string(header+ body + current_abilities + footer, title="Spa Treatment", abilities=abilities, pizza="banana")
+    page=render_template("stat-template.html.j2")
     return page
 
