@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+<title>{{ title }}</title>
+<script type="text/javascript" src="{{ url_for('static', filename='spa.js') }}"></script>
+</head>
+<body>
+<!-- will no one thing of the indention ?!! -->
+<h1 style="text-align: center;">Stat Points Allocator</h1>
+<form action="{{ uri }}" method="POST">
+<table style="width: 611px;" border="1">
+<tbody>
+<tr>
+<td style="width: 237px;">
+<form action="/action_page.php">
+  <label for="name">Name: </label>
+  <input type="text" id="name" name="name"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<h2 style="text-align: center;">Name: {{ name }}</h2>
+</td>
+<td style="width: 133px;">
+<h2 style="text-align: center;">Level: {{ level }}</h2>
+</td>
+<td style="width: 219px;">
+<h2 style="text-align: center;"><span style="color: #ff0000;"><strong><button type="submit" name="submit" value="levelup">Level Up!</button></strong></span></h2>
+</td>
+</tr>
+</tbody>
+</table>
+
+<h2 style="text-align: left;">Points Remaining: {{ points_remaining }}</h2>
+
+<!-- table -->
+<table border="1">
+<tbody>
+
+{% for key,value in abilities.items() %}
+{% if loop.index%2 %}<tr>{% endif %}
+<td><h3>{{ value[1] }}({{ key }})</h3></td>
+<td><h3>{{ value[0] }}</h3></td>
+<td><h2><button type="submit" name="submit" value="{{ key }}down">-</button></h2></td>
+<td><h2><button type="submit" name="submit" value="{{ key }}up">+</button></h2></td>
+{% if loop.index0%2 %}</tr>{% endif %}
+{% endfor %}
+
+</tbody>
+</table>
+
+<!-- skillz to bay someones billz -->
+<h2>Skills:</h2>
+{% for key,value in skills.items() %}
+<h3>{{ value[1] }}:</h3>
+<p>{{ value[0] }}</p>
+{% endfor %}
+
+</form>
+</body>
+</html>
