@@ -11,7 +11,13 @@
 <tbody>
 <tr>
 <td style="width: 237px;">
+{% if name!="" -%}
 <h2 style="text-align: center;">Name: {{ name }}</h2>
+{% else %}
+<label for="name">Name: </label>
+<input type="text" id="name" name="name" value="{{ name }}"><br><br>
+<button type="submit" name="submit" value="name">Enter Witness Protection Program</button>
+{% endif %}
 </td>
 <td style="width: 133px;">
 <h2 style="text-align: center;">Level: {{ level }}</h2>
@@ -23,7 +29,7 @@
 </tbody>
 </table>
 
-<h2 style="text-align: left;">Points Remaining: 0</h2>
+<h2 style="text-align: left;">Points Remaining: {{ points_remaining }}</h2>
 
 <!-- table -->
 <table border="1">
